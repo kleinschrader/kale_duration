@@ -158,33 +158,40 @@ impl<'de> Deserialize<'de> for AbsoluteDuration {
                 }
 
 
-                let mut nanos: u128 = nanos.unwrap_or(0);
+                let mut nanos: u128 = nanos.unwrap_or(0u64) as u128;
 
                 micros
+                    .map(|v: u64| v as u128 )
                     .map(|v: u128| v * consts::NANOS_IN_A_MICROSECOND)
                     .inspect(|v| nanos += v);
 
                 millis
+                    .map(|v: u64| v as u128 )
                     .map(|v: u128| v * consts::NANOS_IN_A_MILLISECOND)
                     .inspect(|v| nanos += v);
 
                 secs
+                    .map(|v: u64| v as u128 )
                     .map(|v: u128| v * consts::NANOS_IN_A_SECOND)
                     .inspect(|v| nanos += v);
 
                 mins
+                    .map(|v: u64| v as u128 )
                     .map(|v: u128| v * consts::NANOS_IN_A_MINUTE)
                     .inspect(|v| nanos += v);
 
                 hours
+                    .map(|v: u64| v as u128 )
                     .map(|v: u128| v * consts::NANOS_IN_AN_HOUR)
                     .inspect(|v| nanos += v);
 
                 days
+                    .map(|v: u64| v as u128 )
                     .map(|v: u128| v * consts::NANOS_IN_A_DAY)
                     .inspect(|v| nanos += v);
 
                 weeks
+                    .map(|v: u64| v as u128 )
                     .map(|v: u128| v * consts::NANOS_IN_A_WEEK)
                     .inspect(|v| nanos += v);
 
