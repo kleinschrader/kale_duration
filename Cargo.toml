@@ -4,6 +4,8 @@ version = "0.1.0"
 edition = "2021"
 description = "A simple rust libary to provide a way to parse durations quickly without having to think about it"
 license = "MIT"
+readme = "README.md"
+repository = "https://github.com/kleinschrader/kale_duration"
 
 [features]
 serde = ["dep:serde"]
