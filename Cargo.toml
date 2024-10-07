@@ -1,6 +1,6 @@
 [package]
 name = "kale_duration"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "A simple rust libary to provide a way to parse durations quickly without having to think about it"
 license = "MIT"
