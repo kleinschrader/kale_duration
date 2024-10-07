@@ -7,7 +7,7 @@ mod cmp;
 mod deserialize;
 
 /// A Duration that is absolute (i.e. can only represent a positive duration and not go into the negative)
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy)]
 pub struct AbsoluteDuration {
     nanos: u128
 }
